@@ -13,9 +13,9 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@sori/api": "workspace:^",
-    "@sori/auth": "workspace:^0.1.0",
-    "@sori/db": "workspace:^0.1.0",
+    "@sori/api": "^0.1.0",
+    "@sori/auth": "^0.1.0",
+    "@sori/db": "^0.1.0",
     "@t3-oss/env-nextjs": "^0.6.1",
     "@tanstack/react-query": "^4.35.3",
     "@tanstack/react-query-devtools": "^4.35.3",
@@ -31,10 +31,10 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
-    "@sori/eslint-config": "workspace:^0.1.0",
-    "@sori/prettier-config": "workspace:^0.1.0",
-    "@sori/tailwind-config": "workspace:^",
-    "@sori/tsconfig": "workspace:^0.1.0",
+    "@sori/eslint-config": "^0.1.0",
+    "@sori/prettier-config": "^0.1.0",
+    "@sori/tailwind-config": "^0.1.0",
+    "@sori/tsconfig": "^0.1.0",
     "@types/node": "^20.6.2",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
@@ -47,10 +47,10 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@acme/eslint-config/base",
-      "@acme/eslint-config/nextjs",
-      "@acme/eslint-config/react"
+      "@sori/eslint-config/base",
+      "@sori/eslint-config/nextjs",
+      "@sori/eslint-config/react"
     ]
   },
-  "prettier": "@acme/prettier-config"
+  "prettier": "@sori/prettier-config"
 }

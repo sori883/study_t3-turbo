@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@sori/tsconfig": "^0.1.0",
+    "@types/node": "^20.6.2",
     "typescript": "^5.2.2"
   },
   "prettier": "@sori/prettier-config"

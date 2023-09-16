@@ -1,27 +1,27 @@
 {
-  "name": "@sori/tailwind-config",
+  "name": "@sori/db",
   "version": "0.1.0",
   "private": true,
-  "main": "index.ts",
-  "files": [
-    "index.ts",
-    "postcss.js"
-  ],
+  "main": "./index.ts",
+  "types": "./index.ts",
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
     "lint": "eslint .",
     "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+    "push": "drizzle-kit push:mysql",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.15",
-    "postcss": "8.4.29",
-    "tailwindcss": "3.3.2"
+    "@auth/core": "^0.15.0",
+    "@planetscale/database": "^1.11.0",
+    "drizzle-orm": "^0.28.6"
   },
   "devDependencies": {
     "@sori/eslint-config": "^0.1.0",
     "@sori/prettier-config": "^0.1.0",
     "@sori/tsconfig": "^0.1.0",
+    "dotenv-cli": "^7.3.0",
+    "drizzle-kit": "^0.19.13",
     "eslint": "^8.49.0",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"

@@ -26,8 +26,8 @@
     "eslint-plugin-react-hooks": "^4.6.0"
   },
   "devDependencies": {
-    "@sori/prettier-config": "workspace:*",
-    "@sori/tsconfig": "workspace:*",
+    "@sori/prettier-config": "^0.1.0",
+    "@sori/tsconfig": "^0.1.0",
     "eslint": "^8.49.0",
     "typescript": "^5.2.2"
   },

@@ -14,7 +14,7 @@
     "prettier-plugin-tailwindcss": "^0.5.4"
   },
   "devDependencies": {
-    "@sori/tsconfig": "workspace:*",
+    "@sori/tsconfig": "^0.1.0",
     "typescript": "^5.2.2"
   },
   "prettier": "@sori/prettier-config"

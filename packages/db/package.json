@@ -8,13 +8,15 @@
     "clean": "rm -rf .turbo node_modules",
     "lint": "eslint .",
     "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+    "dev": "drizzle-kit studio --host 127.0.0.1 --port 3100 --verbose",
     "push": "drizzle-kit push:mysql",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@auth/core": "^0.15.0",
     "@planetscale/database": "^1.11.0",
-    "drizzle-orm": "^0.28.6"
+    "drizzle-orm": "^0.28.6",
+    "mysql2": "^3.6.1"
   },
   "devDependencies": {
     "@sori/eslint-config": "^0.1.0",

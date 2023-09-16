@@ -10,6 +10,7 @@ import {
 } from "drizzle-orm/mysql-core";
 
 import { mySqlTable } from "./_table";
+import { bookmarks, categories } from "./bookmark";
 
 export const users = mySqlTable("user", {
   id: varchar("id", { length: 255 }).notNull().primaryKey(),
@@ -24,6 +25,8 @@ export const users = mySqlTable("user", {
 
 export const usersRelations = relations(users, ({ many }) => ({
   accounts: many(accounts),
+  bookmarks: many(bookmarks),
+  categories: many(categories),
 }));
 
 export const accounts = mySqlTable(

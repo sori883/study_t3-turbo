@@ -1,0 +1,36 @@
+{
+  "name": "@sori/tailwind-config",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.ts",
+  "files": [
+    "index.ts",
+    "postcss.js"
+  ],
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "lint": "eslint .",
+    "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.15",
+    "postcss": "8.4.29",
+    "tailwindcss": "3.3.2"
+  },
+  "devDependencies": {
+    "@sori/eslint-config": "workspace:*",
+    "@sori/prettier-config": "workspace:*",
+    "@sori/tsconfig": "workspace:*",
+    "eslint": "^8.49.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@sori/eslint-config/base"
+    ]
+  },
+  "prettier": "@tooling/prettier-config"
+}

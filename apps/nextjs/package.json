@@ -13,6 +13,8 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@headlessui/tailwindcss": "^0.2.0",
     "@sori/api": "^0.1.0",
     "@sori/auth": "^0.1.0",
     "@sori/db": "^0.1.0",
@@ -38,6 +40,7 @@
     "@types/node": "^20.6.2",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
+    "daisyui": "^3.7.5",
     "dotenv-cli": "^7.3.0",
     "eslint": "^8.49.0",
     "prettier": "^3.0.3",

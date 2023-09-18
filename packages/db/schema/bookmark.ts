@@ -13,7 +13,7 @@ import { users } from "./auth";
 export const bookmarks = mySqlTable("bookmarks", {
   id: serial("id").primaryKey().autoincrement(),
   title: varchar("title", { length: 256 }).notNull(),
-  isArchive: boolean("isArchive").default(false),
+  isArchive: boolean("is_archive").default(false),
   categoryId: int("category_id"),
   userId: varchar("user_id", { length: 255 }).notNull(),
   createdAt: timestamp("created_at")

@@ -13,6 +13,7 @@ import { users } from "./auth";
 export const bookmarks = mySqlTable("bookmarks", {
   id: serial("id").primaryKey().autoincrement(),
   title: varchar("title", { length: 256 }).notNull(),
+  url: varchar("url", { length: 2083 }).notNull(),
   isArchive: boolean("is_archive").default(false),
   categoryId: int("category_id"),
   userId: varchar("user_id", { length: 255 }).notNull(),
@@ -32,7 +33,7 @@ export const bookmarksRelations = relations(bookmarks, ({ one }) => ({
 export const categories = mySqlTable("categories", {
   id: serial("id").primaryKey().autoincrement(),
   title: varchar("title", { length: 256 }).notNull(),
-  userId: varchar("user_id", { length: 255 }),
+  userId: varchar("user_id", { length: 255 }).notNull(),
   createdAt: timestamp("created_at")
     .default(sql`CURRENT_TIMESTAMP`)
     .notNull(),

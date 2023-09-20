@@ -85,3 +85,6 @@ export const verificationTokens = mySqlTable(
     compoundKey: primaryKey(vt.identifier, vt.token),
   }),
 );
+
+export type User = typeof users.$inferSelect;
+export type InsertUser = typeof users.$inferInsert;

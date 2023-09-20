@@ -46,3 +46,8 @@ export const categoriesRelations = relations(categories, ({ one }) => ({
     references: [users.id],
   }),
 }));
+
+export type Bookmark = typeof bookmarks.$inferSelect;
+export type InsertBookmark = typeof bookmarks.$inferInsert;
+export type Category = typeof categories.$inferSelect;
+export type InsertCategory = typeof categories.$inferInsert;

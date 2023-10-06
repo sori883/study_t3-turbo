@@ -2,8 +2,9 @@ import "~/styles/globals.css";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { headers } from "next/headers";
 
-import { BaseLayout } from "~/components/layouts";
+import { TRPCReactProvider } from "~/app/providers";
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -11,6 +12,7 @@ const fontSans = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.URL ?? "http://localhost:3000"),
   title: "Create T3 Turbo",
   description: "Simple monorepo with shared backend for web & mobile apps",
   openGraph: {
@@ -26,15 +28,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout(props: { children: React.ReactNode }) {
   return (
     <html lang="ja">
       <body className={["font-sans", fontSans.variable].join(" ")}>
-        <BaseLayout>{children}</BaseLayout>
+        <TRPCReactProvider headers={headers()}>
+          {props.children}
+        </TRPCReactProvider>
       </body>
     </html>
   );

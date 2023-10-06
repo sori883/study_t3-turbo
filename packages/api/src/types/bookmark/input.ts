@@ -1,12 +1,8 @@
 import { z } from "zod";
 
 export const createInput = z.object({
-  title: z
-    .string()
-    .min(1, "todo must be at least 1 letter")
-    .max(250, "todo must be 250 letters or less"),
-  isArchive: z.boolean(),
-  categoryId: z.number(),
+  url: z.string().url("URLを入力してください"),
+  categoryId: z.number().nullable(),
 });
 
 export const toggleInput = z.object({

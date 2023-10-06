@@ -4,7 +4,7 @@ import { z } from "zod";
 import { createTRPCRouter, protectedProcedure } from "../trpc";
 import { createInput, updateInput } from "../types/category";
 
-export const bookmarkRouter = createTRPCRouter({
+export const categoryRouter = createTRPCRouter({
   all: protectedProcedure.query(({ ctx }) => {
     return ctx.db.query.categories.findMany({
       where: eq(schema.categories.userId, ctx.session.user.id),

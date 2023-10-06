@@ -50,9 +50,9 @@ export const {
     //   return token;
     // },
 
-    // @TODO
+    // // @TODO
     // authorized({ request, auth }) {
-    //   return !!auth?.user
-    // }
+    //   return !!auth?.user;
+    // },
   },
 });

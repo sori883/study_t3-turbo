@@ -18,14 +18,17 @@ async function main() {
   const categories: InsertCategory[] = [
     {
       title: "カテゴリー壱",
+      slug: "slug1",
       userId: user[0].id,
     },
     {
       title: "カテゴリー弐",
+      slug: "slug2",
       userId: user[0].id,
     },
     {
       title: "カテゴリー参",
+      slug: "slug3",
       userId: user[0].id,
     },
   ];

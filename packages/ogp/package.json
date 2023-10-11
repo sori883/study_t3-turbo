@@ -10,6 +10,19 @@
     "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "jsdom": "^22.1.0",
+    "next": "^13.5.3"
+  },
+  "devDependencies": {
+    "@sori/eslint-config": "^0.1.0",
+    "@sori/prettier-config": "^0.1.0",
+    "@sori/tsconfig": "^0.1.0",
+    "@types/jsdom": "^21.1.3",
+    "eslint": "^8.49.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
   "eslintConfig": {
     "root": true,
     "extends": [

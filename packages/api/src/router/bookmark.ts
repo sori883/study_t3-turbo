@@ -58,16 +58,14 @@ export const bookmarkRouter = createTRPCRouter({
       });
     }),
 
-  create: protectedProcedure
-    .input(createInput)
-    .mutation(async ({ ctx, input }) => {
-      return ctx.db.insert(schema.bookmarks).values({
-        ...input,
-        title: "",
-        isArchive: false,
-        userId: ctx.session.user.id,
-      });
-    }),
+  create: protectedProcedure.input(createInput).mutation(({ ctx, input }) => {
+    return ctx.db.insert(schema.bookmarks).values({
+      ...input,
+      title: "",
+      isArchive: false,
+      userId: ctx.session.user.id,
+    });
+  }),
 
   /**
    * Archiveを切り替える

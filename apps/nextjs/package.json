@@ -20,6 +20,7 @@
     "@sori/api": "^0.1.0",
     "@sori/auth": "^0.1.0",
     "@sori/db": "^0.1.0",
+    "@sori/ogp": "^0.1.0",
     "@t3-oss/env-nextjs": "^0.6.1",
     "@tanstack/react-query": "^4.35.3",
     "@tanstack/react-query-devtools": "^4.35.3",

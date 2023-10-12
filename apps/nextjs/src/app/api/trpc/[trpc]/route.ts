@@ -2,7 +2,8 @@ import { appRouter, createTRPCContext } from "@sori/api";
 import { auth } from "@sori/auth";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 
-export const runtime = "edge";
+// OGP取得がEdgeで動かないのでなし
+// export const runtime = "edge";
 
 /**
  * Configure basic CORS headers

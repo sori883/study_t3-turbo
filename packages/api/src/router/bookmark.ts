@@ -1,4 +1,5 @@
 import { and, desc, eq, schema } from "@sori/db";
+import { getPageOGPMetadata } from "@sori/ogp";
 import { z } from "zod";
 
 import { createTRPCRouter, protectedProcedure } from "../trpc";
@@ -58,14 +59,18 @@ export const bookmarkRouter = createTRPCRouter({
       });
     }),
 
-  create: protectedProcedure.input(createInput).mutation(({ ctx, input }) => {
-    return ctx.db.insert(schema.bookmarks).values({
-      ...input,
-      title: "",
-      isArchive: false,
-      userId: ctx.session.user.id,
-    });
-  }),
+  create: protectedProcedure
+    .input(createInput)
+    .mutation(async ({ ctx, input }) => {
+      // ogpを取得
+      const ogp = await getPageOGPMetadata(input.url);
+      return ctx.db.insert(schema.bookmarks).values({
+        ...input,
+        title: ogp.title ? ogp.title : "no title",
+        isArchive: false,
+        userId: ctx.session.user.id,
+      });
+    }),
 
   /**
    * Archiveを切り替える

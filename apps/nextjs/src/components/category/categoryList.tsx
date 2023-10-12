@@ -20,7 +20,7 @@ export function CategoryList() {
 
   return (
     <div className="ui_collapse bg-base-200 ui_collapse-arrow">
-      <input type="checkbox" checked />
+      <input type="checkbox" defaultChecked />
       <div className="ui_collapse-title text-xl font-medium">カテゴリー</div>
       <div className="ui_collapse-content">
         <ul className="ui_menu">

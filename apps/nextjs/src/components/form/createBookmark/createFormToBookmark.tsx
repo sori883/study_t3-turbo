@@ -2,7 +2,7 @@
 
 import { Suspense, useState } from "react";
 
-import { CategorySelect } from "~/components/form/bookmark";
+import { CategorySelect } from "~/components/form/categorySelect";
 import { api } from "~/utils/api";
 
 export function CreateFormToBookmark() {
@@ -17,6 +17,7 @@ export function CreateFormToBookmark() {
         setUrl("");
         setCategory(null);
         await context.bookmark.all.invalidate();
+        await context.bookmark.byCategory.invalidate();
       },
     });
 
@@ -33,6 +34,7 @@ export function CreateFormToBookmark() {
           setUrl("");
           setCategory(null);
           await context.bookmark.all.invalidate();
+          await context.bookmark.byCategory.invalidate();
         } catch {
           // noop
         }
@@ -57,7 +59,7 @@ export function CreateFormToBookmark() {
           </span>
         )}
       </Suspense>
-      <button type="submit" className="btn btn-accent">
+      <button type="submit" className="ui_btn ui_btn-accent">
         Create
       </button>
     </form>

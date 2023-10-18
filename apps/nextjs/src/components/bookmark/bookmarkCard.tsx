@@ -2,7 +2,11 @@
 
 import Link from "next/link";
 
-import { IconArchive, IconBin, IconEdit } from "~/components/icons";
+import {
+  EditFormToBookmark,
+  EditFormToBookmarkCategory,
+} from "~/components/form/editBookmark";
+import { IconArchive, IconBin } from "~/components/icons";
 import { api } from "~/utils/api";
 import type { RouterOutputs } from "~/utils/api";
 
@@ -53,9 +57,7 @@ export function BookmarkAction(props: {
   return (
     <div className="flex gap-2">
       <div className="ui_tooltip" data-tip="Edit">
-        <button className="ui_btn ui_btn-ghost">
-          <IconEdit width="1.5em" height="1.5em" />
-        </button>
+        <EditFormToBookmark bookmark={props.bookmark} />
       </div>
       <div className="ui_tooltip" data-tip="Archive">
         <button
@@ -95,9 +97,7 @@ export function BookmarkActionInCategory(props: {
     <div>
       <div className="flex gap-2">
         <div className="ui_tooltip" data-tip="Edit">
-          <button className="ui_btn ui_btn-ghost">
-            <IconEdit width="1.5em" height="1.5em" />
-          </button>
+          <EditFormToBookmarkCategory bookmark={props.bookmark} />
         </div>
         <div className="ui_tooltip" data-tip="Archive">
           <button

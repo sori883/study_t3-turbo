@@ -3,7 +3,7 @@ import { getPageOGPMetadata } from "@sori/ogp";
 import { z } from "zod";
 
 import { createTRPCRouter, protectedProcedure } from "../trpc";
-import { createInput, toggleInput } from "../types/bookmark";
+import { createInput, toggleInput, updateInput } from "../types/bookmark";
 
 export const bookmarkRouter = createTRPCRouter({
   /*
@@ -42,7 +42,7 @@ export const bookmarkRouter = createTRPCRouter({
           and(
             eq(schema.bookmarks.isArchive, false),
             eq(schema.bookmarks.userId, ctx.session.user.id),
-            eq(schema.categories.title, input.slug),
+            eq(schema.categories.slug, input.slug),
           ),
         )
         .orderBy(desc(schema.bookmarks.id));
@@ -70,6 +70,16 @@ export const bookmarkRouter = createTRPCRouter({
         isArchive: false,
         userId: ctx.session.user.id,
       });
+    }),
+
+  update: protectedProcedure
+    .input(updateInput)
+    .mutation(async ({ ctx, input }) => {
+      const { id, title, categoryId } = input;
+      return ctx.db
+        .update(schema.bookmarks)
+        .set({ title, categoryId })
+        .where(eq(schema.bookmarks.id, id));
     }),
 
   /**

@@ -7,6 +7,7 @@ import { api } from "~/utils/api";
 
 export const CategorySelect = (props: {
   onChange: Dispatch<SetStateAction<number | null>>;
+  defaultValue?: number | null;
 }) => {
   const [categories] = api.category.all.useSuspenseQuery();
 
@@ -18,11 +19,22 @@ export const CategorySelect = (props: {
           label: item.title,
         }));
 
+  const defaultVal = () => {
+    if (!options) return null;
+    if (!props.defaultValue) return null;
+
+    const hoge = options.filter(
+      (option) => option.value === props.defaultValue,
+    );
+    return hoge;
+  };
+
   return (
     <CreatableSelect
       isClearable
       options={options}
       onChange={(v) => props.onChange(v ? v.value : null)}
+      defaultValue={defaultVal()}
     />
   );
 };

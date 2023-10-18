@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 
 import { CategoryList } from "~/components/category";
-import { CreateFormToBookmark } from "~/components/form/bookmark";
+import { CreateFormToBookmark } from "~/components/form/createBookmark";
 import { BaseLayout } from "~/components/layouts";
 
 export default function Layout({ children }: { children: React.ReactNode }) {

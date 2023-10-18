@@ -1,0 +1,32 @@
+{
+  "name": "@sori/ogp",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "lint": "eslint .",
+    "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "jsdom": "^22.1.0"
+  },
+  "devDependencies": {
+    "@sori/eslint-config": "^0.1.0",
+    "@sori/prettier-config": "^0.1.0",
+    "@sori/tsconfig": "^0.1.0",
+    "@types/jsdom": "^21.1.3",
+    "eslint": "^8.49.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@sori/eslint-config/base"
+    ]
+  },
+  "prettier": "@sori/prettier-config"
+}

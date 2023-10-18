@@ -1,0 +1,42 @@
+{
+  "name": "@sori/db",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "lint": "eslint .",
+    "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+    "dev": "drizzle-kit studio --host 127.0.0.1 --port 3100 --verbose",
+    "push": "drizzle-kit push:mysql",
+    "seed": "pnpm with-env node -r esbuild-register ./seed/seed.ts",
+    "with-env": "dotenv -e ../../.env --",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@auth/core": "^0.15.0",
+    "@planetscale/database": "^1.11.0",
+    "drizzle-orm": "^0.28.6",
+    "mysql2": "^3.6.1"
+  },
+  "devDependencies": {
+    "@sori/eslint-config": "^0.1.0",
+    "@sori/prettier-config": "^0.1.0",
+    "@sori/tsconfig": "^0.1.0",
+    "dotenv-cli": "^7.3.0",
+    "drizzle-kit": "^0.19.13",
+    "esbuild": "^0.19.3",
+    "esbuild-register": "^3.5.0",
+    "eslint": "^8.49.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@sori/eslint-config/base"
+    ]
+  },
+  "prettier": "@sori/prettier-config"
+}
